@@ -1,0 +1,37 @@
+<html>
+<body>
+<pre>
+<h1>Build Log</h1>
+<h3>
+--------------------Configuration: GetMacAddress - Win32 Debug--------------------
+</h3>
+<h3>Command Lines</h3>
+Creating temporary file "C:\Users\ADMINI~1\AppData\Local\Temp\RSPD32C.tmp" with contents
+[
+/nologo /MLd /W3 /Gm /GX /ZI /Od /D "WIN32" /D "_DEBUG" /D "_CONSOLE" /D "_MBCS" /Fp"Debug/GetMacAddress.pch" /YX /Fo"Debug/" /Fd"Debug/" /FD /GZ /c 
+"J:\代码\FPGA\WpdPack\Examples-remote\PacketDriver\GetMacAddress\GetMacAddress.c"
+]
+Creating command line "cl.exe @C:\Users\ADMINI~1\AppData\Local\Temp\RSPD32C.tmp" 
+Creating temporary file "C:\Users\ADMINI~1\AppData\Local\Temp\RSPD33D.tmp" with contents
+[
+kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /nologo /subsystem:console /incremental:yes /pdb:"Debug/GetMacAddress.pdb" /debug /machine:I386 /out:"Debug/GetMacAddress.exe" /pdbtype:sept 
+".\Debug\GetMacAddress.obj"
+"..\..\..\lib\Packet.lib"
+]
+Creating command line "link.exe @C:\Users\ADMINI~1\AppData\Local\Temp\RSPD33D.tmp"
+<h3>Output Window</h3>
+Compiling...
+GetMacAddress.c
+j:\代码\fpga\wpdpack\include\packet32.h(195) : error C2079: 'IPAddress' uses undefined struct 'sockaddr_storage'
+j:\代码\fpga\wpdpack\include\packet32.h(196) : error C2079: 'SubnetMask' uses undefined struct 'sockaddr_storage'
+j:\代码\fpga\wpdpack\include\packet32.h(197) : error C2079: 'Broadcast' uses undefined struct 'sockaddr_storage'
+j:\代码\fpga\wpdpack\examples-remote\packetdriver\getmacaddress\getmacaddress.c(37) : fatal error C1083: Cannot open include file: 'ntddndis.h': No such file or directory
+Error executing cl.exe.
+
+
+
+<h3>Results</h3>
+GetMacAddress.exe - 4 error(s), 0 warning(s)
+</pre>
+</body>
+</html>
