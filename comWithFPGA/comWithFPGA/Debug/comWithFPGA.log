@@ -1,4 +1,4 @@
-﻿生成启动时间为 2014/9/15 20:27:28。
+﻿生成启动时间为 2014/9/21 21:58:24。
      1>项目“F:\FPGACODE\comWithFPGA\comWithFPGA\comWithFPGA.vcxproj”在节点 2 上(rebuild 个目标)。
      1>_PrepareForClean:
          正在删除文件“Debug\comWithFPGA.lastbuildstate”。
@@ -9,52 +9,19 @@
          stdafx.cpp
          C:\Program Files\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _WINDOWS /D _DEBUG /D HAVE_REMOTE /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MTd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Yu"StdAfx.h" /Fp"Debug\comWithFPGA.pch" /Fo"Debug\\" /Fd"Debug\vc100.pdb" /Gd /TP /analyze- /errorReport:prompt comWithFPGA.cpp comWithFPGADoc.cpp comWithFPGAView.cpp DlgSavedata.cpp DlgSendMsg.cpp InfoView.cpp MacEdit.cpp MainFrm.cpp RecvPackView.cpp SendChoice.cpp
          SendChoice.cpp
-     1>f:\fpgacode\comwithfpga\comwithfpga\constdef.h(55): error C2143: 语法错误 : 缺少“;”(在“*”的前面)
-     1>f:\fpgacode\comwithfpga\comwithfpga\constdef.h(55): error C4430: 缺少类型说明符 - 假定为 int。注意: C++ 不支持默认 int
-     1>f:\fpgacode\comwithfpga\comwithfpga\constdef.h(55): error C4430: 缺少类型说明符 - 假定为 int。注意: C++ 不支持默认 int
          RecvPackView.cpp
-     1>f:\fpgacode\comwithfpga\comwithfpga\constdef.h(55): error C2143: 语法错误 : 缺少“;”(在“*”的前面)
-     1>f:\fpgacode\comwithfpga\comwithfpga\constdef.h(55): error C4430: 缺少类型说明符 - 假定为 int。注意: C++ 不支持默认 int
-     1>f:\fpgacode\comwithfpga\comwithfpga\constdef.h(55): error C4430: 缺少类型说明符 - 假定为 int。注意: C++ 不支持默认 int
          MainFrm.cpp
-     1>f:\fpgacode\comwithfpga\comwithfpga\constdef.h(55): error C2143: 语法错误 : 缺少“;”(在“*”的前面)
-     1>f:\fpgacode\comwithfpga\comwithfpga\constdef.h(55): error C4430: 缺少类型说明符 - 假定为 int。注意: C++ 不支持默认 int
-     1>f:\fpgacode\comwithfpga\comwithfpga\constdef.h(55): error C4430: 缺少类型说明符 - 假定为 int。注意: C++ 不支持默认 int
-     1>f:\fpgacode\comwithfpga\comwithfpga\mainfrm.cpp(920): error C2039: “adhandle”: 不是“tagMsgParam”的成员
-                 f:\fpgacode\comwithfpga\comwithfpga\constdef.h(53) : 参见“tagMsgParam”的声明
+     1>f:\fpgacode\comwithfpga\comwithfpga\mainfrm.cpp(1075): error C2059: 语法错误:“)”
          MacEdit.cpp
-     1>f:\fpgacode\comwithfpga\comwithfpga\constdef.h(55): error C2143: 语法错误 : 缺少“;”(在“*”的前面)
-     1>f:\fpgacode\comwithfpga\comwithfpga\constdef.h(55): error C4430: 缺少类型说明符 - 假定为 int。注意: C++ 不支持默认 int
-     1>f:\fpgacode\comwithfpga\comwithfpga\constdef.h(55): error C4430: 缺少类型说明符 - 假定为 int。注意: C++ 不支持默认 int
          InfoView.cpp
-     1>f:\fpgacode\comwithfpga\comwithfpga\constdef.h(55): error C2143: 语法错误 : 缺少“;”(在“*”的前面)
-     1>f:\fpgacode\comwithfpga\comwithfpga\constdef.h(55): error C4430: 缺少类型说明符 - 假定为 int。注意: C++ 不支持默认 int
-     1>f:\fpgacode\comwithfpga\comwithfpga\constdef.h(55): error C4430: 缺少类型说明符 - 假定为 int。注意: C++ 不支持默认 int
          DlgSendMsg.cpp
-     1>f:\fpgacode\comwithfpga\comwithfpga\constdef.h(55): error C2143: 语法错误 : 缺少“;”(在“*”的前面)
-     1>f:\fpgacode\comwithfpga\comwithfpga\constdef.h(55): error C4430: 缺少类型说明符 - 假定为 int。注意: C++ 不支持默认 int
-     1>f:\fpgacode\comwithfpga\comwithfpga\constdef.h(55): error C4430: 缺少类型说明符 - 假定为 int。注意: C++ 不支持默认 int
-     1>f:\fpgacode\comwithfpga\comwithfpga\dlgsendmsg.cpp(60): error C2039: “adhandle”: 不是“tagMsgParam”的成员
-                 f:\fpgacode\comwithfpga\comwithfpga\constdef.h(53) : 参见“tagMsgParam”的声明
          DlgSavedata.cpp
-     1>f:\fpgacode\comwithfpga\comwithfpga\constdef.h(55): error C2143: 语法错误 : 缺少“;”(在“*”的前面)
-     1>f:\fpgacode\comwithfpga\comwithfpga\constdef.h(55): error C4430: 缺少类型说明符 - 假定为 int。注意: C++ 不支持默认 int
-     1>f:\fpgacode\comwithfpga\comwithfpga\constdef.h(55): error C4430: 缺少类型说明符 - 假定为 int。注意: C++ 不支持默认 int
          comWithFPGAView.cpp
-     1>f:\fpgacode\comwithfpga\comwithfpga\constdef.h(55): error C2143: 语法错误 : 缺少“;”(在“*”的前面)
-     1>f:\fpgacode\comwithfpga\comwithfpga\constdef.h(55): error C4430: 缺少类型说明符 - 假定为 int。注意: C++ 不支持默认 int
-     1>f:\fpgacode\comwithfpga\comwithfpga\constdef.h(55): error C4430: 缺少类型说明符 - 假定为 int。注意: C++ 不支持默认 int
          comWithFPGADoc.cpp
-     1>f:\fpgacode\comwithfpga\comwithfpga\constdef.h(55): error C2143: 语法错误 : 缺少“;”(在“*”的前面)
-     1>f:\fpgacode\comwithfpga\comwithfpga\constdef.h(55): error C4430: 缺少类型说明符 - 假定为 int。注意: C++ 不支持默认 int
-     1>f:\fpgacode\comwithfpga\comwithfpga\constdef.h(55): error C4430: 缺少类型说明符 - 假定为 int。注意: C++ 不支持默认 int
          comWithFPGA.cpp
-     1>f:\fpgacode\comwithfpga\comwithfpga\constdef.h(55): error C2143: 语法错误 : 缺少“;”(在“*”的前面)
-     1>f:\fpgacode\comwithfpga\comwithfpga\constdef.h(55): error C4430: 缺少类型说明符 - 假定为 int。注意: C++ 不支持默认 int
-     1>f:\fpgacode\comwithfpga\comwithfpga\constdef.h(55): error C4430: 缺少类型说明符 - 假定为 int。注意: C++ 不支持默认 int
          正在生成代码...
      1>已完成生成项目“F:\FPGACODE\comWithFPGA\comWithFPGA\comWithFPGA.vcxproj”(rebuild 个目标)的操作 - 失败。
 
 生成失败。
 
-已用时间 00:00:13.62
+已用时间 00:00:14.41

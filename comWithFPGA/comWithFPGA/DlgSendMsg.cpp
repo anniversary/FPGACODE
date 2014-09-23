@@ -57,6 +57,7 @@ void CDlgSendMsg::OnBnClickedMsgSend()
 			AfxMessageBox(_T("无法获取网卡控制权！"),NULL,MB_ICONERROR);
 			return;
 		}
+		theApp.theApp_send_pcap_handle = pcap_handle;
 		pMsgA->adhandle = pcap_handle;
 		SendMessageA(AfxGetMainWnd()->m_hWnd,WM_UPDATE_SEND_MSG,(WPARAM)pMsgA,NULL);//开启发送短消息数据内容线程
 	}

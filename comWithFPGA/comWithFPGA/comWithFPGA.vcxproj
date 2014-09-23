@@ -41,8 +41,8 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <LinkIncremental>true</LinkIncremental>
-    <IncludePath>F:\FPGA开发代码\WpdPack\Include;F:\快盘文件夹\FPGA\WpdPack\Include;$(IncludePath)</IncludePath>
-    <LibraryPath>F:\FPGA开发代码\WpdPack\Lib;$(LibraryPath)</LibraryPath>
+    <IncludePath>F:\FPGACODE\WpdPack\Include;$(IncludePath)</IncludePath>
+    <LibraryPath>F:\FPGACODE\WpdPack\Lib;$(LibraryPath)</LibraryPath>
     <EmbedManifest>false</EmbedManifest>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">

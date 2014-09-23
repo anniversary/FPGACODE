@@ -66,6 +66,8 @@ protected:
 	afx_msg LRESULT OnUpdateSendVoice(WPARAM wParam,LPARAM lParam); //2014.8.31 zsy 发送声音文件消息
 	afx_msg LRESULT OnUpdateSendPicture(WPARAM wParam,LPARAM lParam);//2014.9.4 zsy 发送图片消息
 	afx_msg LRESULT OnUpdateSendSuspend(WPARAM wParam,LPARAM lParam);//2014.9.12 zsy 发送暂停
+	afx_msg LRESULT OnUpdateSendResend(WPARAM wParam,LPARAM lParam);//2014.9.20 zsy 检查是否发送错误，重新发送
+	afx_msg LRESULT OnUpdateReceiveFPGACheck(WPARAM wParam,LPARAM lParam);//2014.9.21 zsy 检测收到FPGA发送的暂停帧
 	//2014.3.27 zsy
 	DECLARE_MESSAGE_MAP()
 
@@ -81,7 +83,9 @@ public:
 	BOOL b_enableMenu_Send;//2014.8.31 是否开始发送数据，未开始发送为ture，开始为false
 	BOOL b_enableMenu_StopSend;//2014.8.31 是否停止数据发送，未停止为true，停止为false
 	BOOL b_suspend_send; //2014.9.12 是否暂停发送数据，不暂停为true，暂停为false；
+	unsigned short CRCTable_16[256];//2014.9.17 zsy crc_16查询表
 	//2014.5.9
+	CWinThread* pThreadSend;//当前发送数据线程
 	afx_msg void OnStartRecv();
 	// 获得可用适配器的详细信息
 	bool GetEnableAdapterInfo(void);
@@ -95,6 +99,16 @@ public:
 	afx_msg void OnStopSend();
 	afx_msg void OnUpdateStartSend(CCmdUI *pCmdUI);
 	afx_msg void OnUpdateStopSend(CCmdUI *pCmdUI);
+	// 填充FPGA控制字段
+	void MakeFPGAField(u_char * buf);
+	// 填充HDLC字段
+	void MakeHDLCControlField(u_char * buf ,int nSerial);
+	// 填充HDLC字段，信息帧
+	void MakeHDLCMessageField(u_char* buf , u_char *pText , int nSerial);
+	// 函数功能：计算数据流*pData的16位效验码，数据流长度为nLength
+	unsigned short GetCRC_16(unsigned char* pData, int nLength);
+	// 函数功能;
+	void GetCRCTable(unsigned short genePoly);
 };
 
 

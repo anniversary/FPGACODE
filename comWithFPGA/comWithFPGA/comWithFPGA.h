@@ -34,6 +34,9 @@ public:
 	//pcap_if_t *host_device; //本地主机可用适配器设备
 	CArray<Packet_Info*,Packet_Info*> allPacket;  //所有接收到数据包信息，如果有重新接收选项则会被重置为0
 	CArray<Packet_Info*,Packet_Info*> sendMsgPacket;//2014.8.23 zsy 要发送的短消息数据内容
+	//CArray<HDLCParam*,HDLCParam*> sendHDLCMsg;//2014.9.19 zsy 发送的HDLC帧消息 
+	CArray<SendPacket*,SendPacket*> sendPacket;//2014.9.20 zsy 发送的以太网帧
+	CArray<SendPacket*,SendPacket*> sendErrPacket;//2014.9.21 zsy 请求重发的数据帧，每次正常发送时都应该先保证此动态数组中的元素全被发送
 	long m_Number_packet;// 接收到的数据包的数目。如果有重新接收选项则会被重置为0
 	CString str_des_macAddr;  //目的主机的MAC地址
 	CString str_src_macAddr; //本地主机的MAC地址
@@ -51,13 +54,14 @@ public:
 	CView *pMyTreeView;  //视图变量，用来向回调函数中传递，掌管树视图
 	pcap_t *theApp_receive_pcap_handle;  //控制数据监测的开始和停止
 	pcap_t *theApp_send_pcap_handle;  //控制数据发送的开始和停止
-	BOOL b_continueSend; //2014.8.31 zsy 控制单个数据帧是否继续发送，适用于自定义组帧发送。true:继续发送，false：停止发送
-
+	BOOL b_continueSend; //2014.8.31 zsy 控制单个数据帧是否继续发送，适用于自定义组帧发送。true:开始发送，false：停止发送 ；可用于线程的结束
+	BOOL b_suspendSend; //2014.9.21 zsy 收到暂停发送命令，暂停发送；false：暂停发送，true：继续发送
 	int i_radio;  //初始化为-1，选择保存为0，不保存为1
 	int i_combox; // 保存文件的类型，数据包格式或者纯文本格式
 	int i_openFileEx;//打开文件的类型
 	CString  str_fileName; //保存数据的文件名
 	CString  str_openfileName; //发送数据时选择打开的文件名
+	int sendSerial;//当前发送序号
 
 //2014.03.26
 // 重写

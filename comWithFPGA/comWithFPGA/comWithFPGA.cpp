@@ -55,8 +55,8 @@ CcomWithFPGAApp::CcomWithFPGAApp()
 	m_breaktime = 0; //单位ms
 	m_packetLength = 15; //单位字节
 	m_Number_packet = 0;//设置总接收到得数据包个数为0
+	sendSerial = 0; //发送的HDLC数据帧数为0
 	//2014.3.30 zsy
-
 	// 支持重新启动管理器
 	m_dwRestartManagerSupportFlags = AFX_RESTART_MANAGER_SUPPORT_ALL_ASPECTS;
 #ifdef _MANAGED

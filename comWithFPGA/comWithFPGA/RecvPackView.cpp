@@ -155,20 +155,34 @@ LRESULT CRecvPackView::OnUpdateListView(WPARAM wParam,LPARAM lParam)
 		case 6:
 			{
 				//str_Text.Format(_T("%s"),_T(""));
-				
-				int len2 = MultiByteToWideChar(CP_ACP,0,(LPCSTR)onePacket->c_date,-1,NULL,0);
-
+				u_char *hdlcFrame = new u_char[HDLC_lenB_inf+1];//最后一字节应赋值‘\0’,否则后面显示会有乱码
+				memcpy(hdlcFrame,onePacket->c_date+1+3,HDLC_lenB_inf);
+				hdlcFrame[HDLC_lenB_inf] = '\0';
+				if(!hdlcFrame)
+				{
+					delete []hdlcFrame;
+					MessageBox(_T("申请内存失败，请检查后重新运行程序！"),NULL,MB_ICONERROR|MB_OK);
+					AfxGetMainWnd()->PostMessage(WM_CLOSE,NULL,NULL);//退出应用程序
+				}
+				//int len2 = MultiByteToWideChar(CP_ACP,0,(LPCSTR)onePacket->c_date,-1,NULL,0);
+				int len2 = MultiByteToWideChar(CP_ACP,0,(LPCSTR)hdlcFrame,-1,NULL,0);
 				wchar_t *pwText;
 				pwText = new wchar_t[len2];
 				if(!pwText)
 				{
 					delete []pwText;
+					MessageBox(_T("申请内存失败，请检查后重新运行程序！"),NULL,MB_ICONERROR|MB_OK);
+					AfxGetMainWnd()->PostMessage(WM_CLOSE,NULL,NULL);//退出应用程序
 				}
 				//MultiByteToWideChar(CP_ACP,0,(LPCSTR)onePacket->c_date,-1,(LPWSTR)(LPCTSTR)str_Text,len2); 此处不能直接使用(LPWSTR)(LPCTSTR)str_Text，否则提示堆内存泄露
-				MultiByteToWideChar(CP_ACP,0,(LPCSTR)onePacket->c_date,-1,pwText,len2);
+				
+
+				//MultiByteToWideChar(CP_ACP,0,(LPCSTR)onePacket->c_date,-1,pwText,len2);
+				MultiByteToWideChar(CP_ACP,0,(LPCSTR)hdlcFrame,-1,pwText,len2);
 				
 				GetListCtrl().SetItemText(lv_Item.iItem,i,pwText);  //数据内容
 				delete []pwText;
+				delete []hdlcFrame;
 				break;
 			}
 		default:
